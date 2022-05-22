@@ -8,6 +8,9 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float thrustVelocity = 100.0f;
     [SerializeField] private float rotationVelocityDegrees = 1f;
     [SerializeField] private AudioSource mainEngineAudio;
+    [SerializeField] private ParticleSystem thrusterParticles;
+    [SerializeField] private ParticleSystem leftThrusterParticles;
+    [SerializeField] private ParticleSystem rightThrusterParticles;
 
     // Cache
     Rigidbody rigidBody;
@@ -40,7 +43,7 @@ public class PlayerMovementController : MonoBehaviour
     private void ProcessRocketThrust()
     {
         if (movementEnabled && Input.GetKey(KeyCode.Space)) {
-            if (fuelController.availableFuel > 0 )
+            if (fuelController.availableFuel > 0)
             {
                 fuelController.UpdateFuelAvailability();
                 Vector3 force = new Vector3(0, thrustVelocity * Time.deltaTime, 0);
@@ -49,9 +52,24 @@ public class PlayerMovementController : MonoBehaviour
                 {
                     mainEngineAudio.Play();
                 }
+
+                if (!thrusterParticles.isPlaying)
+                {
+                    thrusterParticles.Play();
+                }
+            } else
+            {
+                thrusterParticles.Stop();
             }
-        } else if (mainEngineAudio.isPlaying) {
-            mainEngineAudio.Pause();
+        } else {
+            if (thrusterParticles.isPlaying)
+            {
+                thrusterParticles.Stop();
+            }
+            if (mainEngineAudio.isPlaying)
+            {
+                mainEngineAudio.Pause();
+            }
         }
     }
 
@@ -62,10 +80,22 @@ public class PlayerMovementController : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 RotateRocket(rotationVelocityDegrees);
-            }
-            else if (Input.GetKey(KeyCode.A))
+                if (!leftThrusterParticles.isPlaying)
+                {
+                    leftThrusterParticles.Play();
+                }
+           
+            } else if (Input.GetKey(KeyCode.A))
             {
                 RotateRocket(-rotationVelocityDegrees);
+                if (!rightThrusterParticles.isPlaying)
+                {
+                    rightThrusterParticles.Play();
+                }
+            } else
+            {
+                leftThrusterParticles.Stop();
+                rightThrusterParticles.Stop();
             }
         }
     }

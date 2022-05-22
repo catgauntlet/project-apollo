@@ -7,6 +7,9 @@ public class PlayerCollisionController : MonoBehaviour
     [SerializeField] private AudioSource crashAudio;
     [SerializeField] private AudioSource finishAudio;
 
+    [SerializeField] private ParticleSystem crashParticles;
+    [SerializeField] private ParticleSystem finishParticles;
+
     PlayerMovementController movementController;
 
     private bool canCollide = true;
@@ -45,6 +48,7 @@ public class PlayerCollisionController : MonoBehaviour
     {
         canCollide = false;
         crashAudio.Play();
+        crashParticles.Play();
         DisablePlayerMovement();
         Invoke("LoadCurrentScene", levelReloadDelay);
     }
@@ -53,6 +57,7 @@ public class PlayerCollisionController : MonoBehaviour
     {
         canCollide = false;
         finishAudio.Play();
+        finishParticles.Play();
         DisablePlayerMovement();
         Invoke("LoadNextScene", levelReloadDelay);
     }
