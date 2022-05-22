@@ -298,7 +298,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d496f0993c0b7214487d4e84cab1ef31, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e5d32f4d97a77514eadb34e6bd36a500, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 1122118994}
   - component: {fileID: 1122118999}
   - component: {fileID: 1122119000}
+  - component: {fileID: 3180823597193312837}
   m_Layer: 0
   m_Name: Apollo (Player)
   m_TagString: Player
@@ -566,3 +567,20 @@ MonoBehaviour:
   levelReloadDelay: 2
   crashAudio: {fileID: 1390908494}
   finishAudio: {fileID: 1348061395}
+--- !u!114 &3180823597193312837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699298534041221391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e158fb1934ea54da3138a888dd733f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialFuel: 100
+  fuelUsageModifier: 10
+  fuelCapsuleCount: 20
+  uiController: {fileID: 0}
+  availableFuel: 0

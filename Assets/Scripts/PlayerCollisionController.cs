@@ -7,7 +7,14 @@ public class PlayerCollisionController : MonoBehaviour
     [SerializeField] private AudioSource crashAudio;
     [SerializeField] private AudioSource finishAudio;
 
+    PlayerMovementController movementController;
+
     private bool canCollide = true;
+
+    private void Start()
+    {
+        movementController = GetComponent<PlayerMovementController>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,7 +38,7 @@ public class PlayerCollisionController : MonoBehaviour
 
     private void DisablePlayerMovement()
     {
-        GetComponent<PlayerMovementController>().DisablePlayerMovement();
+        movementController.DisablePlayerMovement();
     }
 
     private void HandleUnfriendlyCollision()

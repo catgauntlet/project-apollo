@@ -12,6 +12,7 @@ public class PlayerMovementController : MonoBehaviour
     // Cache
     Rigidbody rigidBody;
     Transform transform;
+    PlayerFuelController fuelController;
 
     // State
     private bool movementEnabled = true;
@@ -21,6 +22,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         transform = GetComponent<Transform>();
+        fuelController = GetComponent<PlayerFuelController>();
     }
 
     // Update is called once per frame
@@ -38,18 +40,20 @@ public class PlayerMovementController : MonoBehaviour
     private void ProcessRocketThrust()
     {
         if (movementEnabled && Input.GetKey(KeyCode.Space)) {
-            Vector3 force = new Vector3(0, thrustVelocity * Time.deltaTime, 0);
-            rigidBody.AddRelativeForce(force, ForceMode.Force);
-            if (!mainEngineAudio.isPlaying)
+            if (fuelController.availableFuel > 0 )
             {
-                mainEngineAudio.Play();
+                fuelController.UpdateFuelAvailability();
+                Vector3 force = new Vector3(0, thrustVelocity * Time.deltaTime, 0);
+                rigidBody.AddRelativeForce(force, ForceMode.Force);
+                if (!mainEngineAudio.isPlaying)
+                {
+                    mainEngineAudio.Play();
+                }
             }
-
         } else if (mainEngineAudio.isPlaying) {
             mainEngineAudio.Pause();
         }
     }
-
 
     private void ProcessRocketRotation()
     {
