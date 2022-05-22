@@ -316,43 +316,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!1 &1122118988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4699298534041221391, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
-  m_PrefabInstance: {fileID: 4699298532948464707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1122118992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4699298534041221395, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
   m_PrefabInstance: {fileID: 4699298532948464707}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1122118999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122118988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0433a2629956bd742ae54831d4668089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrustVelocity: 1000
-  rotationVelocityDegrees: 200
---- !u!114 &1122119000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122118988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d9f4b8edede86468e51c230428ab79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1192926357}
 --- !u!1 &1189406066
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,13 +472,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 2862524115504864758, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
-      propertyPath: m_TagString
-      value: Unfriendly
-      objectReference: {fileID: 0}
     - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30.7258
       objectReference: {fileID: 0}
     - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -522,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.77
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -618,10 +586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1189406067}
     m_Modifications:
-    - target: {fileID: 1122118994, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
+    - target: {fileID: 1122119000, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1192926357}
     - target: {fileID: 4699298534041221391, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
       propertyPath: m_Name
       value: Apollo (Player)
@@ -670,9 +638,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1122118999, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
-    - {fileID: 1122118993, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b57d3a9ae831e94b907c95ba30358b4, type: 3}
 --- !u!1001 &5060214760123907623
 PrefabInstance:
@@ -785,6 +751,10 @@ PrefabInstance:
     - target: {fileID: 7289324106877668622, guid: b84000e595b787347aecb02948a48345, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289324106877668622, guid: b84000e595b787347aecb02948a48345, type: 3}
+      propertyPath: m_TagString
+      value: Unfriendly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84000e595b787347aecb02948a48345, type: 3}

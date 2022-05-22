@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4699298534041221389}
   - component: {fileID: 4699298534041221390}
   - component: {fileID: 1122118994}
-  - component: {fileID: 1122118993}
   - component: {fileID: 1122118998}
   - component: {fileID: 1122118999}
+  - component: {fileID: 1122119000}
   m_Layer: 0
   m_Name: Apollo (Player)
   m_TagString: Player
@@ -115,22 +115,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 56
+  m_Constraints: 120
   m_CollisionDetection: 2
---- !u!114 &1122118993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699298534041221391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0433a2629956bd742ae54831d4668089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrustVelocity: 1000
-  rotationVelocityDegrees: 200
 --- !u!82 &1122118998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -236,6 +222,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4699298534041221391}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0433a2629956bd742ae54831d4668089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrustVelocity: 1000
+  rotationVelocityDegrees: 200
+--- !u!114 &1122119000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699298534041221391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83d9f4b8edede86468e51c230428ab79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}

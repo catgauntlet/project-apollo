@@ -7,6 +7,8 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float thrustVelocity = 100.0f;
     [SerializeField] private float rotationVelocityDegrees = 1f;
 
+    private bool movementEnabled = true;
+
     Rigidbody rigidBody;
     Transform transform;
     AudioSource audioSource;
@@ -30,7 +32,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void ProcessRocketThrust()
     {
-        if (Input.GetKey(KeyCode.Space)) {
+        if (movementEnabled && Input.GetKey(KeyCode.Space)) {
             Vector3 force = new Vector3(0, thrustVelocity * Time.deltaTime, 0);
             rigidBody.AddRelativeForce(force, ForceMode.Force);
             if (!audioSource.isPlaying)
@@ -46,13 +48,16 @@ public class PlayerMovementController : MonoBehaviour
 
     void ProcessRocketRotation()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (movementEnabled)
         {
-            RotateRocket(rotationVelocityDegrees);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            RotateRocket(-rotationVelocityDegrees);
+            if (Input.GetKey(KeyCode.D))
+            {
+                RotateRocket(rotationVelocityDegrees);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                RotateRocket(-rotationVelocityDegrees);
+            }
         }
     }
 
@@ -63,5 +68,10 @@ public class PlayerMovementController : MonoBehaviour
         rigidBody.freezeRotation = true; // Freezing the rotation so we can manually rotate the gameObject
         transform.Rotate(rotationVector);
         rigidBody.freezeRotation = false; // Unfreezing rotation so the physics engine of Unity can take over again
+    }
+
+    public void DisablePlayerMovement()
+    {
+        movementEnabled = false;
     }
 }
