@@ -477,10 +477,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 30.7258
-      objectReference: {fileID: 0}
-    - target: {fileID: 2862524115504864759, guid: 2670bef0e03ecfc46954bf2500ec08a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -751,10 +747,6 @@ PrefabInstance:
     - target: {fileID: 7289324106877668622, guid: b84000e595b787347aecb02948a48345, type: 3}
       propertyPath: m_Name
       value: Floor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7289324106877668622, guid: b84000e595b787347aecb02948a48345, type: 3}
-      propertyPath: m_TagString
-      value: Unfriendly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84000e595b787347aecb02948a48345, type: 3}

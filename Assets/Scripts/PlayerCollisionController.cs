@@ -2,26 +2,31 @@ using UnityEngine;
 
 public class PlayerCollisionController : MonoBehaviour
 {
-    [SerializeField]
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private float levelReloadDelay = 2f;
+    [SerializeField] private AudioSource crashAudio;
+    [SerializeField] private AudioSource finishAudio;
 
-    [SerializeField]
-    private float levelReloadDelay = 2f;
-   
+    private bool canCollide = true;
+
     private void OnCollisionEnter(Collision collision)
     {
-        switch(collision.gameObject.tag)
+        if (canCollide)
         {
-            case "Unfriendly":
-                HandleUnfriendlyCollision();
-                break;
-            case "Finish":
-                HandleFinishCollision();
-                break;
-            case "Friendly":
-            default:
-                break;
+            switch (collision.gameObject.tag)
+            {
+                case "Unfriendly":
+                    HandleUnfriendlyCollision();
+                    break;
+                case "Finish":
+                    HandleFinishCollision();
+                    break;
+                case "Friendly":
+                default:
+                    break;
+            }
         }
+
     }
 
     private void DisablePlayerMovement()
@@ -31,12 +36,16 @@ public class PlayerCollisionController : MonoBehaviour
 
     private void HandleUnfriendlyCollision()
     {
+        canCollide = false;
+        crashAudio.Play();
         DisablePlayerMovement();
         Invoke("LoadCurrentScene", levelReloadDelay);
     }
 
     private void HandleFinishCollision()
     {
+        canCollide = false;
+        finishAudio.Play();
         DisablePlayerMovement();
         Invoke("LoadNextScene", levelReloadDelay);
     }
@@ -44,11 +53,13 @@ public class PlayerCollisionController : MonoBehaviour
     private void LoadCurrentScene()
     {
         gameManager.ReloadCurrentScene();
+        canCollide = true;
 
     }
 
     private void LoadNextScene()
     {
         gameManager.LoadNextScene();
+        canCollide = true;
     }
 }
