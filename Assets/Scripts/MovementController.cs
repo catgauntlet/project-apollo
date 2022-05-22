@@ -49,6 +49,9 @@ public class MovementController : MonoBehaviour
     private void RotateRocket(float rotationDegrees)
     {
         Vector3 rotationVector = new Vector3(0, 0, rotationDegrees * Time.deltaTime);
+
+        rigidBody.freezeRotation = true; // Freezing the rotation so we can manually rotate the gameObject
         transform.Rotate(rotationVector);
+        rigidBody.freezeRotation = false; // Unfreezing rotation so the physics engine of Unity can take over again
     }
 }
