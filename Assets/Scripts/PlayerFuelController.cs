@@ -21,20 +21,29 @@ public class PlayerFuelController : MonoBehaviour
     public void UpdateFuelAvailability()
     {
         availableFuel -= fuelUsageModifier * Time.deltaTime;
-        uiController.SetAvailableFuel(Mathf.FloorToInt(availableFuel));
+        if (uiController)
+        {
+            uiController.SetAvailableFuel(Mathf.FloorToInt(availableFuel));
+        }
         HandleFuelDeficiency();
     }
 
     public void AddFuelFromCapsule()
     {
         availableFuel += fuelCapsuleCount;
-        uiController.SetAvailableFuel(Mathf.FloorToInt(availableFuel));
+        if (uiController)
+        {
+            uiController.SetAvailableFuel(Mathf.FloorToInt(availableFuel));
+        }
         HandleFuelDeficiency();
     }
 
     public void HandleFuelDeficiency()
     {
-        uiController.SetFuelAlert(availableFuel > alertFuelAmount);
+        if (uiController)
+        {
+            uiController.SetFuelAlert(availableFuel > alertFuelAmount);
+        }
     }
 }
 

@@ -19,6 +19,7 @@ public class PlayerMovementController : MonoBehaviour
 
     // State
     private bool movementEnabled = true;
+    private bool forceRocketUpwards = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,11 @@ public class PlayerMovementController : MonoBehaviour
         ProcessRocketRotation();
     }
 
+    public void ThrustUpwardInMenu()
+    {
+        forceRocketUpwards = true;
+    }
+
     public void DisablePlayerMovement()
     {
         movementEnabled = false;
@@ -42,7 +48,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void ProcessRocketThrust()
     {
-        if (movementEnabled && Input.GetKey(KeyCode.Space)) {
+        if (forceRocketUpwards || (movementEnabled && Input.GetKey(KeyCode.Space))) {
             if (fuelController.availableFuel > 0)
             {
                 fuelController.UpdateFuelAvailability();
