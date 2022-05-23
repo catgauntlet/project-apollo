@@ -74,4 +74,9 @@ public class PlayerCollisionController : MonoBehaviour
         gameManager.LoadNextScene();
         canCollide = true;
     }
+
+    public void ToggleCollisions()
+    {
+        canCollide = !canCollide;
+    }
 }
