@@ -15,7 +15,7 @@ public class ObstacleController : MonoBehaviour
 
     private void Update()
     {
-        if (cyclePeriod == 0) { return;  }
+        if (cyclePeriod <= Mathf.Epsilon) { return;  }
         float cycles = Time.time / cyclePeriod;
         const float tau = Mathf.PI * 2;
         float rawSinWave = Mathf.Sin(cycles * tau);

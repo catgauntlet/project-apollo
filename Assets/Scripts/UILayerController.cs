@@ -22,6 +22,7 @@ public class UILayerController : MonoBehaviour
             fuelAlertBlinking = false;
             fuelAlertPanel.GetComponent<Image>().color = new Color(1, 0, 0, 0);
             fuelText.color = Color.white;
+            CancelInvoke();
         }
         else
         {

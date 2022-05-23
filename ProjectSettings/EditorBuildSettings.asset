@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Movement.unity
     guid: 5c46238106646df40b01a591b0baee3c
+  - enabled: 1
+    path: Assets/Scenes/Pathfinding.unity
+    guid: ba596e21627dd474b99ccf1f65d402e9
+  - enabled: 1
+    path: Assets/Scenes/Oh shit.unity
+    guid: 5fc94458976f451489aa78f8349f36ac
   m_configObjects: {}
