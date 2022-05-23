@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerCollisionController : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
@@ -11,12 +11,14 @@ public class PlayerCollisionController : MonoBehaviour
     [SerializeField] private ParticleSystem finishParticles;
 
     PlayerMovementController movementController;
+    DealWithItGlassesController dealWithItGlassesController;
 
     private bool canCollide = true;
 
     private void Start()
     {
         movementController = GetComponent<PlayerMovementController>();
+        dealWithItGlassesController = GetComponent<DealWithItGlassesController>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -59,6 +61,7 @@ public class PlayerCollisionController : MonoBehaviour
         finishAudio.Play();
         finishParticles.Play();
         DisablePlayerMovement();
+        dealWithItGlassesController.DropGlasses();
         Invoke("LoadNextScene", levelReloadDelay);
     }
 

@@ -16,6 +16,7 @@ public class PlayerMovementController : MonoBehaviour
     Rigidbody rigidBody;
     Transform transform;
     PlayerFuelController fuelController;
+    DealWithItGlassesController dealWithItGlassesController;
 
     // State
     private bool movementEnabled = true;
@@ -27,6 +28,7 @@ public class PlayerMovementController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         transform = GetComponent<Transform>();
         fuelController = GetComponent<PlayerFuelController>();
+        dealWithItGlassesController = GetComponent<DealWithItGlassesController>();
     }
 
     // Update is called once per frame
@@ -48,6 +50,10 @@ public class PlayerMovementController : MonoBehaviour
 
     private void ProcessRocketThrust()
     {
+        if (forceRocketUpwards)
+        {
+            dealWithItGlassesController.DropGlasses();
+        }
         if (forceRocketUpwards || (movementEnabled && Input.GetKey(KeyCode.Space))) {
             if (fuelController.availableFuel > 0)
             {
