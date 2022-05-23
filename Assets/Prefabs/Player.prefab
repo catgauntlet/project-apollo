@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1426917158123671017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4644658963922796384}
+  - component: {fileID: 7433948453245245938}
+  m_Layer: 0
+  m_Name: Point Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4644658963922796384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426917158123671017}
+  m_LocalRotation: {x: 0.31430182, y: -0.4821643, z: -0.67461115, w: -0.46220312}
+  m_LocalPosition: {x: 0, y: -0.00000047683716, z: -0.000000059604645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900134475995326061}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: -70.235, y: 3.671, z: -251.416}
+--- !u!108 &7433948453245245938
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426917158123671017}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 0.9811321, g: 0.72875935, b: 0.2005458, a: 1}
+  m_Intensity: 2.28
+  m_Range: 8.7
+  m_SpotAngle: 18.8
+  m_InnerSpotAngle: 16.9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 0.957
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &2047269690178897361
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: lengthInSec
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: playOnAwake
@@ -631,6 +725,10 @@ PrefabInstance:
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: ShapeModule.type
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 23.86
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: moveWithTransform
@@ -658,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 8.72
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: EmissionModule.m_BurstCount
@@ -678,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -686,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.size
@@ -698,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: InitialModule.startRotation.scalar
@@ -722,6 +820,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4774177529800506713, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
@@ -1419,6 +1521,7 @@ MonoBehaviour:
   initialFuel: 100
   fuelUsageModifier: 10
   fuelCapsuleCount: 20
+  alertFuelAmount: 20
   uiController: {fileID: 0}
   availableFuel: 0
 --- !u!114 &2149372885692694913
@@ -2500,7 +2603,7 @@ PrefabInstance:
     - target: {fileID: 6071490405809777624, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6c9955b161a879f4db5489bc10f7889c, type: 2}
+      objectReference: {fileID: 2100000, guid: 0d30ec14f008c6a448917b17a090ad44, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e146146032c6a747b5eddaa03e4ddb7, type: 3}
 --- !u!198 &7224442501276818653 stripped

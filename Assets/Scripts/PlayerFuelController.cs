@@ -8,6 +8,7 @@ public class PlayerFuelController : MonoBehaviour
     [SerializeField] private float initialFuel = 100f;
     [SerializeField] private float fuelUsageModifier = 1f;
     [SerializeField] private float fuelCapsuleCount = 20f;
+    [SerializeField] private float alertFuelAmount = 80f;
     [SerializeField] private UILayerController uiController;
 
     public float availableFuel;
@@ -21,11 +22,19 @@ public class PlayerFuelController : MonoBehaviour
     {
         availableFuel -= fuelUsageModifier * Time.deltaTime;
         uiController.SetAvailableFuel(Mathf.FloorToInt(availableFuel));
+        HandleFuelDeficiency();
     }
 
     public void AddFuelFromCapsule()
     {
         availableFuel += fuelCapsuleCount;
         uiController.SetAvailableFuel(Mathf.FloorToInt(availableFuel));
+        HandleFuelDeficiency();
+    }
+
+    public void HandleFuelDeficiency()
+    {
+        uiController.SetFuelAlert(availableFuel > alertFuelAmount);
     }
 }
+
